@@ -5,12 +5,13 @@
 #   - perform the selected option (you may prompt additional info to user when need)
 #   - display the resulting values of the array
 
-print(".・。.・゜✭・.・✫・゜・。.")
+print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.\n")
 list_values=[5, 6, 7, 8, 9, 12, 14, 19, 20, 21]
 #displays the content of the array
 print(list_values)
 menu=True
 while menu:
+    print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
     print ("""
     Menu
     [1] ❀ Add an element
@@ -20,15 +21,43 @@ while menu:
     [5] ▲ Arrange in ascending order
     [6] ▼ Arrange in descending order
     """)
+
     menu=input("What would you like to do? ")
     if menu=="1":
         add_value=input("What number would you like to add to the existing list? ")
         list_values.append(add_value)
 
-        print(f'Updated List {list_values}')
+        print(f'\nUpdated List {list_values}\n')
     elif menu=="2":
-        insert_value=input("Please input a number and an index you would like to put your number at: ")
-        list_values.insert(insert_value)
+        insert_value=input("Please input a number you would like to insert to the list: ")
+        index=int(input("At which position on the list would you like your number to appear? "))
 
-        print(f'Updated List {list_values}')
+        list_values.insert(index, insert_value)
+
+        print(f'\nUpdated List {list_values}\n')
         
+    elif menu=="3":
+        modify_value=int(input("What number would you like to input on the list? "))
+        modify_index=int(input("Which item would you like to be replaced by your number? "))
+
+        list_values[modify_index] = modify_value
+
+        print(f'\nUpdated List {list_values}\n')
+
+    elif menu=="4":
+        delete_value=(input("Which element of the list you would like to remove? "))
+
+        list_values.remove(delete_value)
+        
+        print(f'\nUpdated List {list_values}\n')
+
+    elif menu=="5":
+        list_values.sort
+        print(f'\nUpdated List {list_values}\n')
+
+    elif menu=="6":
+        list_values.sort(reverse=True)
+        print(f'\nUpdated List {list_values}\n')
+    break
+
+    
